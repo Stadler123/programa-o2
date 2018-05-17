@@ -1,0 +1,49 @@
+22-
+
+class A extends Exception { …}
+class B extends A { … }
+// …
+try { … }
+catch (A ex) { … }
+catch (B ex) { … }
+
+
+
+
+A ordem em que colocamos os blocos “catch” é muito importante: deve ser da mais específica para a mais genérica.
+
+
+class A extends Exception { …}
+class B extends A { … }
+// …
+try { … }
+catch (B ex) { … }
+catch (A ex) { … }
+
+------------------------------------------
+
+
+Exemplo:
+
+
+
+try {
+  \\ comandos
+} catch (Exception e) {
+  \\ comandos
+} catch (FileNotFoundException f) {
+  \\ comandos
+}
+
+Supondo que ocorreu uma “FileNotFoundException” dentro do bloco “try”, a execução vai procurar o primeiro bloco “catch” que seja compatível com o tipo de Exception ocorrida.
+O primeiro bloco será analisado e, como Exception é superclasse de “FileNotFoundException”, a execução entrará no primeiro bloco “catch”. O segundo sequer será testado.
+Para que tudo funcione temos que trocar a ordem dos blocos “catch”:
+
+try {
+  \\ comandos
+} catch (FileNotFoundException f) {
+  \\ comandos;
+} catch (Exception e) {
+  \\ comandos
+}
+
