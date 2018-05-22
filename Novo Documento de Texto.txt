@@ -1,24 +1,24 @@
-22-
+22-O que est√° errado no fragmento seguinte? 
 
-class A extends Exception { Ö}
-class B extends A { Ö }
-// Ö
-try { Ö }
-catch (A ex) { Ö }
-catch (B ex) { Ö }
-
-
+class A extends Exception { ‚Ä¶}
+class B extends A { ‚Ä¶ }
+// ‚Ä¶
+try { ‚Ä¶ }
+catch (A ex) { ‚Ä¶ }
+catch (B ex) { ‚Ä¶ }
 
 
-A ordem em que colocamos os blocos ìcatchî È muito importante: deve ser da mais especÌfica para a mais genÈrica.
 
 
-class A extends Exception { Ö}
-class B extends A { Ö }
-// Ö
-try { Ö }
-catch (B ex) { Ö }
-catch (A ex) { Ö }
+A ordem em que colocamos os blocos ‚Äúcatch‚Äù √© muito importante: deve ser da mais espec√≠fica para a mais gen√©rica.
+
+
+class A extends Exception { ‚Ä¶}
+class B extends A { ‚Ä¶ }
+// ‚Ä¶
+try { ‚Ä¶ }
+catch (B ex) { ‚Ä¶ }
+catch (A ex) { ‚Ä¶ }
 
 ------------------------------------------
 
@@ -35,9 +35,9 @@ try {
   \\ comandos
 }
 
-Supondo que ocorreu uma ìFileNotFoundExceptionî dentro do bloco ìtryî, a execuÁ„o vai procurar o primeiro bloco ìcatchî que seja compatÌvel com o tipo de Exception ocorrida.
-O primeiro bloco ser· analisado e, como Exception È superclasse de ìFileNotFoundExceptionî, a execuÁ„o entrar· no primeiro bloco ìcatchî. O segundo sequer ser· testado.
-Para que tudo funcione temos que trocar a ordem dos blocos ìcatchî:
+Supondo que ocorreu uma ‚ÄúFileNotFoundException‚Äù dentro do bloco ‚Äútry‚Äù, a execu√ß√£o vai procurar o primeiro bloco ‚Äúcatch‚Äù que seja compat√≠vel com o tipo de Exception ocorrida.
+O primeiro bloco ser√° analisado e, como Exception √© superclasse de ‚ÄúFileNotFoundException‚Äù, a execu√ß√£o entrar√° no primeiro bloco ‚Äúcatch‚Äù. O segundo sequer ser√° testado.
+Para que tudo funcione temos que trocar a ordem dos blocos ‚Äúcatch‚Äù:
 
 try {
   \\ comandos
